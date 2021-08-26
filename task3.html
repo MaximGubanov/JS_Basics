@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        1. 10 плюс 10 равно 20
+        2. 20 плюс "10" - не явное преобразование типов (20 будет приведено к строке), в итоге будет '2010'
+        3. результат присваивается в переменную result1
+        4. с помощью console.log выводим result1 в консоль
+        */
+        let result1 = 10 + 10 + "10";
+        console.log(result1);
+    </script>
+    <script>
+        /*
+        1. 10 плюс "10" получиться "1010" - строка
+        2. "1010" плюс 10, снова приведение типа к строке, получиться "101010"
+        3. в переменную result2  сохраниться результат
+        4. console.log выведет в консоль 101010
+        */
+        let result2 = 10 + "10" + 10;
+        console.log(result2);
+    </script>
+    <script>
+        /*
+        1. 10 плюс 10 равно 20
+        2. +'10' (плюс преобразует "10" в число 10)
+        3. 20 плюс 10 равно 30, результат присвоиться переменной result3
+        4. result3 выведется в консоль с помощью console.log
+        */
+        let result3 = 10 + 10 + +"10";
+        console.log(result3);
+    </script>
+    <script>
+        /*
+        
+        */
+        let result4 = 10 / -"";
+        console.log(result4);
+    </script>
+    <script>
+        /*
+        1. В JS для дробей используется точка, а не запятая. Плюс будет пытаться привести 2,5 к числу, но
+        будет ошибка в виде NaN
+        2. 10 разделить на NaN равно NaN
+        3. в result5 запишется NaN
+        4. в консоль выведется NaN
+        */
+        let result5 = 10 / +"2,5";
+        console.log(result5);
+    </script>
+</body>
+
+</html>
