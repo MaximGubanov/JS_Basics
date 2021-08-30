@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function plus(a, b) {
+            return a + b
+        }
+
+        function minus(a, b) {
+            return a - b
+        }
+
+        function del(a, b) {
+            return a / b
+        }
+
+        function mul(a, b) {
+            return a * b
+        }
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "сложить":
+                    result = plus(arg1, arg2);
+                    break;
+                case "вычесть":
+                    result = minus(arg1, arg2);
+                    break;
+                case "делить":
+                    result = del(arg1, arg2);
+                    break;
+                case "умножить":
+                    result = mul(arg1, arg2);
+                    break;
+            }
+            return result
+        }
+
+        let arg1 = +prompt("Введите первый аргумент: ")
+        let arg2 = +prompt("Введите второй аргумент: ")
+        let operation = prompt("Выберите операцию: сложить, вычесть, делить, умножить ")
+
+        alert(mathOperation(arg1, arg2, operation))
+
+    </script>
+</body>
+
+</html>
