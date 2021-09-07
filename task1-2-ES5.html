@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        // ES5
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function (editText) {
+            this.text = editText;
+        };
+
+        let book1 = new Post("Куприн", "", 1897);
+        book1.edit("Гранатовый браслет");
+        alert(book1.author + " - " + book1.text + " - " + book1.date);
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            this.highlighted = true;
+        };
+
+        let book2 = new AttachedPost("Гончаров", "", 1870);
+        book2.edit("Обрыв");
+        book2.makeTextHighlighted();
+        alert(book2.author + " - " + book2.text + " - " + book2.date + " - " + book2.highlighted);
+
+    </script>
+</body>
+
+</html>
