@@ -29,6 +29,11 @@
     и выведите их в консоль. -->
 
     <script>
+        'use strict;'
+
+        let divClassCardBody = document.querySelectorAll('.card-body').forEach(function (name) {
+            console.log(name.querySelectorAll('.card-link'));
+        });
 
     </script>
 </body>
